@@ -9,8 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("api/v1/cus")
 public class TestController {
+
+
+
     @GetMapping
-    public ResponseEntity<String> test() {
-        return new ResponseEntity<>("OK FINEEEE", HttpStatus.OK);
+    public ResponseEntity<DTO> test() {
+        DTO dto = new DTO("a", "b");
+
+        return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 }
